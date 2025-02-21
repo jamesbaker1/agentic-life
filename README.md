@@ -1,6 +1,6 @@
 # Agentic Life
 
-Agentic Life is an AI-powered tool that scans your life (emails, documents, texts) from the past 12 hours, extracts actionable to-do items, and sends you an aggregated summary email. Built to run as a GitHub Action, it's designed to be extended into a full-fledged automation platform.
+Agentic Life is an AI-powered tool that scans your life (emails, documents, texts, calendar) from the past 12 hours, extracts actionable to-do items, and sends you an aggregated summary email. Built to run as a GitHub Action, it's designed to be extended into a full-fledged automation platform.
 
 ## Features
 
