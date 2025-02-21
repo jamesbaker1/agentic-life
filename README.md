@@ -28,40 +28,27 @@ cd gmail-todo-bot
 2. Configure GitHub Secrets
 Even with a public repository, your sensitive data remains secure via GitHub Secrets. In your repository settings under Settings > Secrets and variables > Actions, add:
 
-GMAIL_CREDENTIALS: Paste the entire content of your credentials.json.
-GMAIL_TOKEN: Paste the base64‑encoded content of your token.pickle.
-OPENROUTER_API_KEY: Your OpenRouter API key.
-(Optional) YOUR_SITE_URL and YOUR_SITE_NAME for OpenRouter API headers.
+- GMAIL_CREDENTIALS: Paste the entire content of your credentials.json.
+- GMAIL_TOKEN: Paste the base64‑encoded content of your token.pickle.
+- OPENROUTER_API_KEY: Your OpenRouter API key.
+- (Optional) YOUR_SITE_URL and YOUR_SITE_NAME for OpenRouter API headers.
+- 
 3. GitHub Actions Workflow
 The workflow file at .github/workflows/email_bot.yml is set to run every 12 hours. It:
 
-Checks out the code.
-Sets up Python and installs dependencies.
-Writes credentials.json and token.pickle from secrets.
-Executes the email bot script.
+- Checks out the code.
+- Sets up Python and installs dependencies.
+- Writes credentials.json and token.pickle from secrets.
+- Executes the email bot script.
 4. Running Locally
+  
 If you prefer to test locally, place your credentials.json and token.pickle in the project root, install dependencies, and run:
 
 bash
-Copy
+```
 pip install -r requirements.txt
 python email_bot.py
-Future Extensions
+```
+
+###Future Extensions
 This project lays the groundwork for a complete email automation tool. Future enhancements could include:
-
-Automated email sorting and labeling.
-Integration with additional APIs and services.
-Interactive dashboards and real-time reporting.
-License
-This project is licensed under the MIT License.
-
-Contributing
-Contributions are welcome! Fork the repository and submit pull requests for improvements or new features.
-
-Contact
-For questions or suggestions, please open an issue in this repository.
-
-arduino
-Copy
-
-This README provides a quick overview, setup instructions (including GitHub Actions), and notes on future extensibility.
