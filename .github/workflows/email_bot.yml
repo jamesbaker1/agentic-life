@@ -1,0 +1,38 @@
+name: Email Todo Bot
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"  # Runs every 12 hours
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib openai
+
+      - name: Write Gmail credentials
+        run: echo "$GMAIL_CREDENTIALS" > credentials.json
+        env:
+          GMAIL_CREDENTIALS: ${{ secrets.GMAIL_CREDENTIALS }}
+
+      - name: Write Gmail token
+        run: echo "$GMAIL_TOKEN" | base64 -d > token.pickle
+        env:
+          GMAIL_TOKEN: ${{ secrets.GMAIL_TOKEN }}
+
+      - name: Run email bot script
+        run: python email_bot.py
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          YOUR_SITE_URL: ${{ secrets.YOUR_SITE_URL }}
+          YOUR_SITE_NAME: ${{ secrets.YOUR_SITE_NAME }}
