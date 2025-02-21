@@ -1,6 +1,6 @@
-# Gmail Todo Bot
+# Agentic Life
 
-Gmail Todo Bot is an AI-powered tool that scans your Gmail inbox for emails from the past 12 hours, extracts actionable to-do items via the OpenRouter API, and sends you an aggregated summary email. Built to run as a GitHub Action, it's designed to be extended into a full-fledged email automation platform.
+Agentic Life is an AI-powered tool that scans your life (emails, documents, texts) from the past 12 hours, extracts actionable to-do items, and sends you an aggregated summary email. Built to run as a GitHub Action, it's designed to be extended into a full-fledged automation platform.
 
 ## Features
 
